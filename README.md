@@ -2,7 +2,7 @@
   <img src="https://capsule-render.vercel.app/api?type=soft&color=0:BEE3F8,50:00ADD8,100:2B6CB0&height=200&section=header&text=Task%20Tracker%20CLI&fontSize=70&fontAlignY=40&fontColor=FFFFFF&desc=A%20Lightweight%20Go-Powered%20Task%20Manager&descAlignY=65&descSize=20&fontUrl=https://fonts.googleapis.com/css2?family=Outfit:wght@700" alt="Task Tracker Banner" width="100%" />
 
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Outfit&weight=500&size=24&pause=1000&color=00ADD8&center=true&vCenter=true&width=800&lines=Robust+Command-Line+Interface;Zero-Dependency+Standard+Library;Instant+JSON+Persistence;Streamlined+Workflow" alt="Typing Animation" />
+    <img src="https://readme-typing-svg.demolab.com?font=Outfit&weight=500&size=24&pause=1000&color=00ADD8&center=true&vCenter=true&width=800&lines=Robust+Command-Line+Interface;Zero-Dependency+Standard+Library;Instant+JSON+Persistence;Modular+Go+Architecture" alt="Typing Animation" />
   </a>
 
 <br>
@@ -13,13 +13,13 @@
 
 </div>
 
-
+<br>
 
 ## 📋 Overview
 
-**Task Tracker CLI** is a professional-grade command-line tool developed in **Go**. It provides a focus-driven environment for managing your daily tasks directly from your terminal, without the bloat of external dependencies or complex databases.
+**Task Tracker CLI** is a professional terminal-based utility developed in **Go**. It provides a high-performance, modular environment for managing tasks with full persistence and status tracking.
 
-Built with a commitment to **clean architecture** and **minimalism**, it serves as both a powerful utility and a reference for standard library Go development.
+Designed with **Clean Architecture** principles, the project demonstrates a robust separation of concerns between CLI commands, business logic, and data storage—all while using only the Go standard library.
 
 <br>
 
@@ -28,61 +28,59 @@ Built with a commitment to **clean architecture** and **minimalism**, it serves 
 <table border="0">
   <tr>
     <td width="50%" valign="top">
-      <h3>🚀 Fast Execution</h3>
-      <p>Compiled Go binary ensures near-instant response times for all CLI interactions.</p>
+      <h3>🚀 Faster Workflow</h3>
+      <p>Compiled Go binary for near-zero latency command execution.</p>
     </td>
     <td width="50%" valign="top">
-      <h3>📁 Precise Logging</h3>
-      <p>Automatic timestamping and ID generation for every task you create.</p>
+      <h3>📁 Modular Design</h3>
+      <p>Clean separation between <code>cmd</code>, <code>services</code>, and <code>storage</code> layers.</p>
     </td>
   </tr>
   <tr>
     <td width="50%" valign="top">
-      <h3>🔍 Smart Filtering</h3>
-      <p>List tasks by status (todo, in-progress, done) to keep your focus sharp.</p>
+      <h3>🔍 Status-Based Listing</h3>
+      <p>Filter tasks instantly by their status: <code>todo</code>, <code>in-progress</code>, or <code>done</code>.</p>
     </td>
     <td width="50%" valign="top">
-      <h3>🛠️ Zero Setup</h3>
-      <p>Simply run the binary. No database to configure or external libraries to install.</p>
+      <h3>💾 Robust Persistence</h3>
+      <p>Structured JSON storage with automatic ID management and timestamping.</p>
     </td>
   </tr>
 </table>
 
+<br>
 
 ## 🧰 Technical Stack
 
 <div align="center">
   <br>
-  <img src="https://skillicons.dev/icons?i=go,git,github,bash,linux&theme=light" height="50" alt="Tech Stack" />
+  <img src="https://skillicons.dev/icons?i=go,git,github&theme=light" height="50" alt="Tech Stack" />
   
-  <br>
+  <br><br>
 
   | Component | Implementation |
   | :--- | :--- |
-  | **Language** | Go 1.21+ (Standard Library) |
-  | **Persistence** | Structured JSON Data |
-  | **Packaging** | Go Modules |
+  | **Core Language** | Go 1.21+ (Standard Library) |
+  | **Architecture** | Feature-First / Modular |
+  | **CLI Parsing** | Native <code>os.Args</code> implementation |
+  | **Data Format** | Validated JSON Persistence |
 
 </div>
 
 <br>
 
-## 📂 Project Structure
+## 📂 Project Architecture
+
+A clean, modular structure ensures maintainability and scalability.
 
 ```bash
-task-tracker-cli/
-├── cmd/
-│   └── root.go           # CLI handler: parses commands and calls services
-├── models/
-│   └── task.go           # Task struct and TaskData struct for JSON storage
-├── services/
-│   └── task_service.go   # Business logic: add, update, delete, mark, list tasks
-├── storage/
-│   └── file.go           # JSON file handling: load and save tasks
-├── go.mod                # Go module definition and dependencies
-├── main.go               # Entry point: executes CLI handler
-└── README.md             # Project documentation and usage instructions
-
+.
+├── cmd/               # ⌨️ CLI Command Handlers
+├── models/            # 📦 Data Structures (Task, TaskData)
+├── services/          # 🧠 Business Logic (CRUD Operations)
+├── storage/           # 💾 Data Persistence Layer
+├── main.go            # 🏁 Application Entry Point
+└── tasks.json         # 🗄️ Local Data Storage
 ```
 
 <br>
@@ -94,22 +92,17 @@ task-tracker-cli/
     git clone https://github.com/mzaid-dev/task-tracker-cli.git
     cd task-tracker-cli
     ```
-2.  **Quick Run**:
+2.  **Usage Syntax**:
     ```bash
-    # Add a task
-    go run main.go add "Finish the Go project"
-
-    # List all tasks
-    go run main.go list
-
-    # Update status
-    go run main.go update 1 "done"
+    go run main.go [command] [args]
     ```
 3.  **Command Reference**:
-    - `add` - Create new task entry
-    - `list` - View all tasks by status
-    - `update` - Modify description/status
-    - `delete` - Remove task from storage
+    | Command | Example | Description |
+    | :--- | :--- | :--- |
+    | `add` | `add "Task Description"` | Create a new task |
+    | `list` | `list [status]` | View all or filtered tasks |
+    | `update` | `update <id> <status>` | Change task status |
+    | `delete` | `delete <id>` | Remove task from storage |
 
 <br>
 
