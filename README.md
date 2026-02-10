@@ -13,7 +13,7 @@
 
 </div>
 
-<br>
+
 
 ## 📋 Overview
 
@@ -48,7 +48,6 @@ Built with a commitment to **clean architecture** and **minimalism**, it serves 
   </tr>
 </table>
 
-<br>
 
 ## 🧰 Technical Stack
 
@@ -56,7 +55,7 @@ Built with a commitment to **clean architecture** and **minimalism**, it serves 
   <br>
   <img src="https://skillicons.dev/icons?i=go,git,github,bash,linux&theme=light" height="50" alt="Tech Stack" />
   
-  <br><br>
+  <br>
 
   | Component | Implementation |
   | :--- | :--- |
@@ -71,10 +70,19 @@ Built with a commitment to **clean architecture** and **minimalism**, it serves 
 ## 📂 Project Structure
 
 ```bash
-.
-├── go.mod        # Project dependencies
-├── main.go       # Application logic
-└── README.md     # Documentation
+task-tracker-cli/
+├── cmd/
+│   └── root.go           # CLI handler: parses commands and calls services
+├── models/
+│   └── task.go           # Task struct and TaskData struct for JSON storage
+├── services/
+│   └── task_service.go   # Business logic: add, update, delete, mark, list tasks
+├── storage/
+│   └── file.go           # JSON file handling: load and save tasks
+├── go.mod                # Go module definition and dependencies
+├── main.go               # Entry point: executes CLI handler
+└── README.md             # Project documentation and usage instructions
+
 ```
 
 <br>
