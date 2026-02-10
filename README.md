@@ -13,13 +13,13 @@
 
 </div>
 
-<br>
-
 ## 📋 Overview
 
 **Task Tracker CLI** is a professional terminal-based utility developed in **Go**. It provides a high-performance, modular environment for managing tasks with full persistence and status tracking.
 
 Designed with **Clean Architecture** principles, the project demonstrates a robust separation of concerns between CLI commands, business logic, and data storage—all while using only the Go standard library.
+
+**Project URL:** [https://github.com/mzaid-dev/task-tracker-cli](https://github.com/mzaid-dev/task-tracker-cli)
 
 <br>
 
