@@ -7,6 +7,7 @@
 
 <br>
   <p>
+    <a href="https://roadmap.sh/projects/task-tracker"><img src="https://img.shields.io/badge/Project-Roadmap.sh-00ADD8?style=social&logo=roadmap" alt="Project Link" /></a>&nbsp;&nbsp;
     <a href="#"><img src="https://img.shields.io/badge/Language-Go%201.21+-00ADD8?style=social&logo=go" alt="Go" /></a>&nbsp;&nbsp;
     <a href="#"><img src="https://img.shields.io/badge/License-MIT-4caf50?style=social&logo=opensourceinitiative" alt="License" /></a>
   </p>
@@ -18,8 +19,6 @@
 **Task Tracker CLI** is a professional terminal-based utility developed in **Go**. It provides a high-performance, modular environment for managing tasks with full persistence and status tracking.
 
 Designed with **Clean Architecture** principles, the project demonstrates a robust separation of concerns between CLI commands, business logic, and data storage—all while using only the Go standard library.
-
-**Project URL:** [https://github.com/mzaid-dev/task-tracker-cli](https://github.com/mzaid-dev/task-tracker-cli)
 
 <br>
 
